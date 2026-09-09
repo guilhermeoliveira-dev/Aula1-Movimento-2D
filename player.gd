@@ -6,6 +6,8 @@ var GRAVIDADE: float = 8
 var VELOCIDADE: float = 150
 var PULO: float = 300
 
+var pontos: int = 0
+
 func _physics_process(_delta):
 	
 	var input_horizontal: float = 0
@@ -34,6 +36,8 @@ func _input(event):
 	if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_accept"):
 		if is_on_floor():
 			velocity.y = -PULO
+			pontos = pontos + 1
+			%Pontos.text = str(pontos)
 	
 	# Aplicação do método n.1 para detectar inputs:
 	# Essa forma perde um pouco de valor pois não temos como controlar facilmente quando aceleramos 

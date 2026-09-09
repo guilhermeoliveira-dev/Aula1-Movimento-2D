@@ -108,7 +108,6 @@ color = Color(0.264, 0.352, 0.44, 1)
 
 [node name="Fim de Jogo" type="CanvasLayer" parent="." unique_id=321607472]
 unique_name_in_owner = true
-visible = false
 
 [node name="PanelContainer" type="PanelContainer" parent="Fim de Jogo" unique_id=2078454639]
 anchors_preset = 8
@@ -133,5 +132,13 @@ theme_override_constants/margin_bottom = 20
 [node name="Label" type="Label" parent="Fim de Jogo/PanelContainer/MarginContainer" unique_id=1493878656]
 layout_mode = 2
 text = "Você venceu!"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2034761987]
+
+[node name="Pontos" type="Label" parent="CanvasLayer" unique_id=21360356]
+unique_name_in_owner = true
+offset_right = 40.0
+offset_bottom = 23.0
+text = "0"
 
 [connection signal="body_entered" from="Bandeira" to="Bandeira" method="_on_body_entered"]
